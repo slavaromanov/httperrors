@@ -1,0 +1,91 @@
+package httperrors
+
+import "net/http"
+
+// FromStatusCode return error based on status code.
+func FromStatusCode(statusCode int) error {
+	switch statusCode {
+	case http.StatusBadRequest:
+		return BadRequest
+	case http.StatusUnauthorized:
+		return Unauthorized
+	case http.StatusPaymentRequired:
+		return PaymentRequired
+	case http.StatusForbidden:
+		return Forbidden
+	case http.StatusNotFound:
+		return NotFound
+	case http.StatusMethodNotAllowed:
+		return MethodNotAllowed
+	case http.StatusNotAcceptable:
+		return NotAcceptable
+	case http.StatusProxyAuthRequired:
+		return ProxyAuthRequired
+	case http.StatusRequestTimeout:
+		return RequestTimeout
+	case http.StatusConflict:
+		return Conflict
+	case http.StatusGone:
+		return Gone
+	case http.StatusLengthRequired:
+		return LengthRequired
+	case http.StatusPreconditionFailed:
+		return PreconditionFailed
+	case http.StatusRequestEntityTooLarge:
+		return RequestEntityTooLarge
+	case http.StatusRequestURITooLong:
+		return RequestURITooLong
+	case http.StatusUnsupportedMediaType:
+		return UnsupportedMediaType
+	case http.StatusRequestedRangeNotSatisfiable:
+		return RequestedRangeNotSatisfiable
+	case http.StatusExpectationFailed:
+		return ExpectationFailed
+	case http.StatusTeapot:
+		return Teapot
+	case http.StatusMisdirectedRequest:
+		return MisdirectedRequest
+	case http.StatusUnprocessableEntity:
+		return UnprocessableEntity
+	case http.StatusLocked:
+		return Locked
+	case http.StatusFailedDependency:
+		return FailedDependency
+	case http.StatusTooEarly:
+		return TooEarly
+	case http.StatusUpgradeRequired:
+		return UpgradeRequired
+	case http.StatusPreconditionRequired:
+		return PreconditionRequired
+	case http.StatusTooManyRequests:
+		return TooManyRequests
+	case http.StatusRequestHeaderFieldsTooLarge:
+		return RequestHeaderFieldsTooLarge
+	case http.StatusUnavailableForLegalReasons:
+		return UnavailableForLegalReasons
+	case http.StatusInternalServerError:
+		return InternalServerError
+	case http.StatusNotImplemented:
+		return NotImplemented
+	case http.StatusBadGateway:
+		return BadGateway
+	case http.StatusServiceUnavailable:
+		return ServiceUnavailable
+	case http.StatusGatewayTimeout:
+		return GatewayTimeout
+	case http.StatusHTTPVersionNotSupported:
+		return HTTPVersionNotSupported
+	case http.StatusVariantAlsoNegotiates:
+		return VariantAlsoNegotiates
+	case http.StatusInsufficientStorage:
+		return InsufficientStorage
+	case http.StatusLoopDetected:
+		return LoopDetected
+	case http.StatusNotExtended:
+		return NotExtended
+	case http.StatusNetworkAuthenticationRequired:
+		return NetworkAuthenticationRequired
+	default:
+		return nil
+	}
+}
